@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
-
-et -euxo pipefail
+#!/bin/sh -l
 
 insecure_option=""
 if [[ "$YA_INSECURE" == "true" ]]; then
