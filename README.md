@@ -1,4 +1,4 @@
-# MinIO Upload Github Action
+# Yet another MinIO Upload GitHub Action
 
 Runs [minio client](https://min.io/docs/minio/linux/reference/minio-mc.html) to upload file(s) to MinIO (self-hosted as well)
 

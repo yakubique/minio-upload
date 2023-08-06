@@ -1,6 +1,9 @@
-name: MinIO Upload
+name: Yet another MinIO Upload
 description: Upload file(s) to MinIO instance (self-hosted as well)
 author: "Vladimir <opa_oz> Levin"
+branding:
+  icon: upload-cloud
+  color: purple
 inputs:
   endpoint:
     description: MinIO endpoint (use `insecure=true` for HTTP-only)
