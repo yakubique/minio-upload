@@ -10,5 +10,6 @@ RUN chmod +x $HOME/minio-binaries/mc
 RUN export PATH=$PATH:$HOME/minio-binaries/
 
 COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
