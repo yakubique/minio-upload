@@ -29,7 +29,7 @@ Runs [minio client](https://min.io/docs/minio/linux/reference/minio-mc.html) to 
     bucket: my_bucket_name
     source: ./public
     # Leading slash is required
-    target: '/my-awesome-site/public'
+    target: '/my-awesome-site'
     # If you omit the `recursive` argument, action only copies objects in the top level of the specified directory.
     recursive: true
 ```
