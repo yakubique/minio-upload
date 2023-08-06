@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 et -euxo pipefail
 
 insecure_option=""
