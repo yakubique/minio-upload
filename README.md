@@ -7,7 +7,7 @@ Runs [minio client](https://min.io/docs/minio/linux/reference/minio-mc.html) to 
 1. Upload a file
 ```yaml
 - name: Upload to MinIO
-  uses: yakubique/minio-upload@v1
+  uses: yakubique/minio-upload@v1.1.0
   with:
     endpoint: ${{ secrets.MINIO_ENDPOINT }}
     access_key: ${{ secrets.MINIO_ACCESS_KEY }}
@@ -20,8 +20,8 @@ Runs [minio client](https://min.io/docs/minio/linux/reference/minio-mc.html) to 
 
 2. Upload a directory
 ```yaml
-- name: Upload to MinIO
-  uses: yakubique/minio-upload@v1
+- name: Upload a directory to MinIO
+  uses: yakubique/minio-upload@vv1.1.0
   with:
     endpoint: ${{ secrets.MINIO_ENDPOINT }}
     access_key: ${{ secrets.MINIO_ACCESS_KEY }}
@@ -37,7 +37,7 @@ Runs [minio client](https://min.io/docs/minio/linux/reference/minio-mc.html) to 
 3. Upload to the insecure MinIO instance (_http-only_)
 ```yaml
 - name: Upload to MinIO
-  uses: yakubique/minio-upload@v1
+  uses: yakubique/minio-upload@v1.1.0
   with:
     endpoint: ${{ secrets.MINIO_ENDPOINT }}
     access_key: ${{ secrets.MINIO_ACCESS_KEY }}

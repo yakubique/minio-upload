@@ -8,7 +8,7 @@ if [[ "$YA_INSECURE" == "true" ]]; then
 fi
 
 recursive_option=""
-if [[ "$YA_INSECURE" == "true" ]]; then
+if [[ "YA_RECURSIVE" == "true" ]]; then
   recursive_option="--recursive"
 fi
 
