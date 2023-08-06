@@ -1,0 +1,43 @@
+name: MinIO Upload
+description: Upload file(s) to MinIO instance (self-hosted as well)
+author: "Vladimir <opa_oz> Levin"
+inputs:
+  endpoint:
+    description: MinIO endpoint (use `insecure=true` for HTTP-only)
+    required: true
+  access_key:
+    description: MinIO access key
+    required: true
+  secret_key:
+    description: MinIO secret key
+    required: true
+  bucket:
+    description: Target bucket to upload file to
+    required: true
+  source:
+    description: File to upload (use `recursive=true` to upload directory)
+    required: true
+  target:
+    description: Target in MinIO's bucket (with a leading slash, default='/')
+    required: false
+    default: '/'
+  insecure:
+    description: Disables TLS/SSL certificate verification. Allows TLS connectivity to servers with invalid certificates.
+    required: false
+    default: 'false'
+  recursive:
+    description: If you specify a directory, you must also set `recursive=true` to recursively copy the contents of that directory. If you omit the `recursive` argument, action only copies objects in the top level of the specified directory.
+    required: false
+    default: 'false'
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    YA_ENDPOINT: "${{ inputs.endpoint }}"
+    YA_ACCESS_KEY: "${{ inputs.access_key }}"
+    YA_SECRET_KEY: "${{ inputs.secret_key }}"
+    YA_INSECURE: "${{ inputs.insecure }}"
+    YA_RECURSIVE: "${{ inputs.recursive }}"
+  args:
+    - "${{ inputs.source }}"
+    - "${{ inputs.bucket }}${{ inputs.target }}"
