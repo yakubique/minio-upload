@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-export PATH=$PATH:$HOME/minio-binaries/
+export PATH=$PATH:/minio-binaries/
 
 insecure_option=""
 if [[ "$YA_INSECURE" == "true" ]]; then
@@ -12,5 +12,5 @@ if [[ "$YA_RECURSIVE" == "true" ]]; then
   recursive_option="--recursive"
 fi
 
-$HOME/minio-binaries/mc alias set ${insecure_option:+"$insecure_option"} target "$YA_ENDPOINT" "$YA_ACCESS_KEY" "$YA_SECRET_KEY"
-$HOME/minio-binaries/mc ${insecure_option:+"$insecure_option"} cp ${recursive_option:+"$recursive_option"} $1 "target/$2"
+mc alias set ${insecure_option:+"$insecure_option"} target "$YA_ENDPOINT" "$YA_ACCESS_KEY" "$YA_SECRET_KEY"
+mc ${insecure_option:+"$insecure_option"} cp ${recursive_option:+"$recursive_option"} $1 "target/$2"
